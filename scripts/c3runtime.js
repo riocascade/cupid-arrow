@@ -3181,6 +3181,7 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		C3.Behaviors.Sin.Acts.SetPhase,
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.System.Acts.NextPrevLayout,
+		C3.Plugins.System.Exps.projectversion,
 		C3.Plugins.Touch.Cnds.OnTouchObject
 		];
 	};
@@ -3437,6 +3438,11 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 			return () => f0(0, 1);
 		},
 		() => "start",
+		() => "version",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => ("Game by Cascadeplay 2021, Version " + f0());
+		},
 		() => "quit"
 	];
 }
